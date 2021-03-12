@@ -43,6 +43,7 @@ INSERT INTO `area` (`id`, `nombre_area`) VALUES
 (2, 'ventas'),
 (3, 'produccion'),
 (4, 'calidad');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
