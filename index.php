@@ -21,7 +21,7 @@ include('database/connection.php');
                 </thead>
                 <tbody>
                     <?php
-                    $user = $Con->prepare('SELECT * FROM empleado');
+                    $user = $Con->prepare('SELECT * FROM area ar INNER JOIN empleado em on em.fk_area_id = ar.id ');
                     $user->execute();
                     $row = $user->fetchAll();
 
@@ -31,7 +31,7 @@ include('database/connection.php');
                             <td><?php echo $empleado['nombre'] ?></td>
                             <td><?php echo $empleado['email'] ?></td>
                             <td><?php echo $empleado['sexo'] ?></td>
-                            <td><?php '1' ?></td>
+                            <td><?php echo $empleado['nombre_area'] ?></td>
                             <td><?php echo $empleado['boletin'] ?></td>
                             <td><a class="btn btn-secondary" href="edit.php?id=<?php echo $empleado['id'] ?>"><em class="fas fa-marker "></em></a>
                             </td>
